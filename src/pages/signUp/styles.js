@@ -10,3 +10,9 @@ export const Container = styled.div`
 
     background: ${({theme}) => theme.COLORS.DARK_900};
 `;
+
+export const Link = styled.a`
+
+    color: ${({theme}) => theme.COLORS.LIGHT_100};
+    
+`;
