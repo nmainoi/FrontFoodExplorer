@@ -13,14 +13,12 @@ export const Container = styled.div`
 
     display: grid;
 
-    grid-template-rows: 114px auto;
+    grid-template-rows: 100px auto;
 
     grid-template-areas:
     "header"
     "content";
-    @media (min-width: 800px) {
-        grid-template-rows: 100px auto;
-    }
+
 
 `;
 
@@ -33,7 +31,7 @@ export const Header = styled.header`
     display: flex;
 
 
-     height: 114px;
+     height: 100px;
 
     align-items: center;
 

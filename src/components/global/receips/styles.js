@@ -13,7 +13,7 @@ position: relative;
 
 `;
 
-export const Button = styled.button`
+export const Button = styled.div`
  background-color: ${({ theme }) => theme.COLORS.RED_200};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-family: 'Poppins';

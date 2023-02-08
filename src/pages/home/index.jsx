@@ -1,10 +1,12 @@
-
+import { Container } from "./styles"
 import { Layout } from "../../components/layout"
-
+import { Greeting } from "../../components/global/Greeting"
 function Home() {
 
     return(<Layout>
-        <h1>Home</h1>
+        <Container>
+            <Greeting/>
+        </Container>
     </Layout>)
 }
 
