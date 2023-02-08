@@ -1,8 +1,8 @@
-import { Container, Header } from "./styles";
+import { Container, Header, Input } from "./styles";
 import { Logo } from "../global/logo";
-import { MenuIcon } from "../../assets/Icons";
+import { MenuIcon, SearchIcon,ReceipIcon,ArrowRigth } from "../../assets/Icons";
 import { useMediaQuery } from 'react-responsive';
-import { ReceipsMobile } from "../global/receips";
+import { ReceipsMobile, ReceipsDesktop } from "../global/receips";
 import { IconButton } from "../global/IconButton";
 
 
@@ -21,6 +21,18 @@ const HeaderMobile = () =>
 const HeaderDesktop = () =>
     <Header>
         <Logo size={"24.16px"} />
+        <Input >
+
+            <SearchIcon/>
+            <input placeholder={"Busque por pratos ou ingredientes"} />
+        </Input>
+        <IconButton>
+<ReceipsDesktop receips={"0"} />
+        </IconButton>
+
+        <IconButton>
+            <ArrowRigth />
+        </IconButton>
     </Header>
 
 function Layout({ children, ...props }) {

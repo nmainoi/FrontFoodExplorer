@@ -31,4 +31,62 @@ export const Header = styled.header`
 
     padding: 0 28px;
 
+
+    @media (min-width: 800px) {
+        height: 100px;
+        padding: 0 64px;
+        justify-content: center;
+        gap: 64px;
+    }
+
 `;
+
+
+export const Input = styled.div`
+
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+
+
+width: 100%;
+max-width: 581px;
+height: 48px;
+border-radius: 5px;
+gap: 16px;
+
+
+
+
+background: ${({ theme }) => theme.COLORS.DARK_900};
+
+> input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    max-width: 251px;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    text-align: start;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+
+outline: none;
+
+&::placeholder {
+    color: ${({theme}) => theme.COLORS.LIGHT_500};
+}
+&::focus {
+    outline: none;
+}
+ 
+
+}
+
+
+`;
+
