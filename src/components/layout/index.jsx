@@ -2,7 +2,7 @@ import { Container, Header } from "./styles";
 import { Logo } from "../global/logo";
 import { MenuIcon } from "../../assets/Icons";
 import { useMediaQuery } from 'react-responsive';
-import { Receips } from "../global/receips";
+import { ReceipsMobile } from "../global/receips";
 import { IconButton } from "../global/IconButton";
 
 
@@ -14,11 +14,14 @@ const HeaderMobile = () =>
         </IconButton>
         <Logo size={"21.16px"} />
         <IconButton>
-            <Receips receips={"0"} />
+            <ReceipsMobile receips={"0"} />
         </IconButton>
     </Header>
 
-
+const HeaderDesktop = () =>
+    <Header>
+        <Logo size={"24.16px"} />
+    </Header>
 
 function Layout({ children, ...props }) {
 
@@ -28,7 +31,7 @@ function Layout({ children, ...props }) {
 
     return (
         <Container>
-            {isDesktop ? <></> : <HeaderMobile />}
+            {isDesktop ? <HeaderDesktop/> : <HeaderMobile />}
             {children}
         </Container>
     );

@@ -4,7 +4,7 @@ import { ReceipIcon } from "../../../assets/Icons";
 
 
 
-function Receips({ receips, ...props }) {
+function ReceipsMobile({ receips, ...props }) {
     return (
         <Container>
             <ReceipIcon />
@@ -16,5 +16,5 @@ function Receips({ receips, ...props }) {
 
 
 export {
-    Receips
+    ReceipsMobile
 }
