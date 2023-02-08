@@ -15,8 +15,8 @@ export const Text = styled.p`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 37.2432px;
-    line-height: 44px;
+    font-size:  ${props => props.size ? props.size : '37.2432px'};
+
 
 
     color: #FFFFFF;
