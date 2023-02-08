@@ -4,7 +4,7 @@ import { LogoExplorer } from '../../../assets/Icons';
 function Logo() {
     return (
         <Container>
-          <LogoExplorer/>  <Text>Food Explorer</Text>
+          <LogoExplorer/>  <Text>food explorer</Text>
         </Container>
     );
 }

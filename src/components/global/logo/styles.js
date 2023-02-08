@@ -7,15 +7,16 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    gap : 0.625rem;
+    gap : 10px;
 
 `;
 
 export const Text = styled.p`
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 2.3277rem;
-    line-height: 2.75rem;
+    font-size: 37.2432px;
+    line-height: 44px;
 
 
     color: #FFFFFF;

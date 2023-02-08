@@ -1,11 +1,11 @@
 import {Container,Input,Label} from './styles'
 
 
-function InputComponent({label, ...props}) {
+function InputComponent({label, placeHolder, ...props}) {
     return (
         <Container>
             <Label>{label}</Label>
-            <Input {...props} />
+            <Input placeholder={placeHolder} {...props} />
         </Container>
     );
 }

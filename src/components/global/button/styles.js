@@ -6,15 +6,27 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: .75rem 2rem;
-gap: .5rem;
+padding: 12px 32px;
+gap: 8px;
 
 border: none;
-max-width: 19.75rem;
-height: 3rem;
 
-border-radius: 0.5rem;
 
-color: ${({theme}) => theme.COLORS.LIGHT_100};
-background: ${({theme}) => theme.COLORS.RED_100};
+
+border-radius: 8px;
+
+color: ${({ theme }) => theme.COLORS.LIGHT_100};
+background: ${({ theme }) => theme.COLORS.RED_100};
+
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+
+width: 100%;
+height: 100%;
+max-height: 48px;
+
 `;

@@ -1,13 +1,14 @@
-import { Wrapper, InputWrapper } from './styles'
+import { Wrapper, InputWrapper,Title } from './styles'
 import { Logo } from '../../global/logo';
 
 
-function LoginWrapper({ children, ...props }) {
+function LoginWrapper({ children,title, ...props }) {
 
     return (
         <Wrapper>
             <Logo />
             <InputWrapper>
+                <Title>{title}</Title>
                 {children}
             </InputWrapper>
         </Wrapper>
