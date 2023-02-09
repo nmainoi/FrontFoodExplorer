@@ -40,6 +40,21 @@ text-align: center;
 color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
 }
+
+> p {
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+
+text-align: center;
+
+/* Tints/Cake 200 */
+
+color: ${({ theme }) => theme.COLORS.BLUE_100};
+}
 `;
 
 
@@ -61,7 +76,11 @@ width: 88px;
 height: 88px;
 border-radius: 50%;
 
-background-color: ${({ theme }) => theme.COLORS.RED_200};
+
+background-image: url(${({ image }) => image});
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 `;
 
 export const AddArea = styled.div`
@@ -70,7 +89,7 @@ height: auto;
 display: flex;
 
 align-items: center;
-justify-content: center;
+justify-content: space-evenly;
 gap: 8px;
 
 > p {
