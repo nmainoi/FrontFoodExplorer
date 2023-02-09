@@ -10,5 +10,10 @@ export const Container = styled.div`
     justify-content: flex-start;
     padding: 10px 0;
 
-    gap: 10px;
+    gap: 30px;
+
+    @media (min-width: 800px) {
+
+        gap: 64px;
+    }
     `;

@@ -123,7 +123,9 @@ export const Content = styled.main`
 
     height: 100%;
 
+    gap: 64px;
     display: grid;
+ 
 
 &::-webkit-scrollbar {
   width: 2px;
