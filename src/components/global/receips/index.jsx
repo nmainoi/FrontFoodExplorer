@@ -4,6 +4,7 @@ import { ReceipIcon } from "../../../assets/Icons";
 
 import { useMediaQuery } from 'react-responsive';
 
+import { IconButton } from "../IconButton";
 
 
 import { ButtonComponent } from "../button";
@@ -28,16 +29,19 @@ function ReceipsDesktop({ receips, ...props }) {
         <>
 
             {isDesktop ?
-                <Container>
-                    <ReceipIcon />
-                    <Button>{receips}</Button>
-                </Container>
+                <IconButton>
+                    <Container>
+                        <ReceipIcon />
+                        <Button>{receips}</Button>
+                    </Container>
+                </IconButton>
+
                 :
                 <>
-                    <ButtonComponent 
-                    icon={<ReceipIcon />}
-                    text={`Pedidos (${receips})`}  
-                    style={{ maxWidth: '216px' }}/>
+                    <ButtonComponent
+                        icon={<ReceipIcon />}
+                        text={`Pedidos (${receips})`}
+                        style={{ maxWidth: '216px' }} />
 
                 </>
             }

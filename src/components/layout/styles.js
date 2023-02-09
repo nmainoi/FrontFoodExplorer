@@ -8,13 +8,16 @@ import styled from "styled-components";
 export const Container = styled.div`
 
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
+
+     height: 100vh;
+
+
+    
 
     display: grid;
 
     grid-template-rows: 100px auto;
-
+    overflow-x: hidden;
     grid-template-areas:
     "header"
     "content";
@@ -113,8 +116,15 @@ export const Content = styled.main`
 
     background-color: ${({theme}) => theme.COLORS.DARK_400};
 
-    overflow-y: auto;
+    overflow-y: scroll;
 
+    width: 100%;
+
+    height: 100%;
+
+    display: grid;
+
+ 
 
 `;
 

@@ -31,9 +31,9 @@ const HeaderDesktop = () =>
             <input placeholder={"Busque por pratos ou ingredientes"} />
         </Input>
 
-        <IconButton>
-            <ReceipsDesktop receips={"0"} />
-        </IconButton>
+
+        <ReceipsDesktop receips={"0"} />
+
 
         <IconButton>
             <ArrowRigth />
@@ -47,32 +47,32 @@ const HeaderDesktop = () =>
 
 
 
-    function Layout({ children, ...props }) {
+function Layout({ children, ...props }) {
 
-        const isDesktop = useMediaQuery({
-            query: '(min-width: 800px)'
-        })
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 800px)'
+    })
 
-        return (
-            <Container>
-                <HeaderWrapper>
-                    {isDesktop ? <HeaderDesktop /> : <HeaderMobile />}
-                </HeaderWrapper>
-                <Content>
-                    {children}
-                    <Footer>
-                        <Logo size={"15.16px"} />
+    return (
+        <Container>
+            <HeaderWrapper>
+                {isDesktop ? <HeaderDesktop /> : <HeaderMobile />}
+            </HeaderWrapper>
+            <Content>
+                {children}
+                <Footer>
+                    <Logo size={"15.16px"} />
 
-                        <p>
-                            © 2023 - Todos os direitos reservados.
-                        </p>
-                    </Footer>
-                </Content>
+                    <p>
+                        © 2023 - Todos os direitos reservados.
+                    </p>
+                </Footer>
+            </Content>
 
 
-            </Container>
-        );
-    }
+        </Container>
+    );
+}
 
 export {
     Layout

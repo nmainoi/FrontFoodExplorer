@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Button = styled.button`
     width: auto;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
