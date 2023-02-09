@@ -62,7 +62,7 @@ left: -1px;
 position: absolute;
 width: 224px;
 height: 292px;
-top: 20px;
+top: 35px;
 
 /* Gradients/100 */
 background: ${({ theme }) => theme.COLORS.GRADIENT_100};
@@ -82,7 +82,7 @@ position: absolute;
 width: 224px;
 height: 292px;
 right: -1px;
-top: 20px;
+top: 35px;
 
 /* Gradients/100 */
 
