@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-left: 10px;
+  padding-left: 10px;
   max-width: 100vw;
 
   > h1 {
@@ -19,7 +19,7 @@ color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
  
  @media (min-width: 800px) {
-    margin-left: 0;
+   padding-left: 0;
     position: relative;
  }
 `;
