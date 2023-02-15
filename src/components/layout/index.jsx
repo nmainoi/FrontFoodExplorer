@@ -4,10 +4,10 @@ import { MenuIcon, SearchIcon, ReceipIcon, ArrowRigth } from "../../assets/Icons
 import { useMediaQuery } from 'react-responsive';
 import { ReceipsMobile, ReceipsDesktop } from "../global/receips";
 import { IconButton } from "../global/IconButton";
+import {useAuth} from "../../context/Auth"
 
 
-
-const HeaderMobile = () =>
+const HeaderMobile = ({logout}) =>
     <Header>
 
         <IconButton>
@@ -22,7 +22,7 @@ const HeaderMobile = () =>
 
     </Header>
 
-const HeaderDesktop = () =>
+const HeaderDesktop = ({logout}) =>
     <Header>
         <Logo size={"24.16px"} />
 
@@ -35,7 +35,7 @@ const HeaderDesktop = () =>
         <ReceipsDesktop receips={"0"} />
 
 
-        <IconButton>
+        <IconButton onClick={logout}>
             <ArrowRigth />
         </IconButton>
 
@@ -48,6 +48,7 @@ const HeaderDesktop = () =>
 
 
 function Layout({ children, ...props }) {
+    const {signOut} =  useAuth();
 
     const isDesktop = useMediaQuery({
         query: '(min-width: 800px)'
@@ -56,7 +57,7 @@ function Layout({ children, ...props }) {
     return (
         <Container>
             <HeaderWrapper>
-                {isDesktop ? <HeaderDesktop /> : <HeaderMobile />}
+                {isDesktop ? <HeaderDesktop logout ={signOut} /> : <HeaderMobile logout ={signOut} />}
             </HeaderWrapper>
             <Content>
                 {children}
