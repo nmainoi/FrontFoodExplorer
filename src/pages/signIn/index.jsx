@@ -7,14 +7,15 @@ import { useState } from "react";
 import {useAuth} from "../../context/Auth"
 function SignIn() {
     
-    const {signIn} = useAuth();
+    const {signIn,user} = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(""); 
-
+    
 
     const HandleSignIn = async () => {
         await signIn({email, password});
     }
+
 
     return (
         <Container>

@@ -1,16 +1,54 @@
-import { Container, Header, Input, HeaderWrapper, Content, Footer } from "./styles";
+import { Container,
+     Header, 
+     Input,
+      HeaderWrapper,
+       Content,
+        Footer, 
+        MobileDrawerBody,
+         MobileText,
+          MobileDrawerItens,
+          MobileSection } from "./styles";
 import { Logo } from "../global/logo";
-import { MenuIcon, SearchIcon, ReceipIcon, ArrowRigth } from "../../assets/Icons";
+import { MenuIcon, SearchIcon, CloseIcon, ArrowRigth } from "../../assets/Icons";
 import { useMediaQuery } from 'react-responsive';
 import { ReceipsMobile, ReceipsDesktop } from "../global/receips";
 import { IconButton } from "../global/IconButton";
-import {useAuth} from "../../context/Auth"
+import { useAuth } from "../../context/Auth"
+import { useState } from 'react'
+import { useEffect } from "react";
 
 
-const HeaderMobile = ({logout}) =>
-    <Header>
+function MobileDrawer({ setToggle,logout }) {
+    return <MobileDrawerBody>
 
-        <IconButton>
+        <Header>
+            <IconButton onClick={() => setToggle(false)}>
+                <CloseIcon />
+            </IconButton>
+            <MobileText>
+                <span>Menu</span>
+            </MobileText>
+        </Header>
+        <MobileDrawerItens>
+            <Input >
+                <SearchIcon />
+                <input placeholder={"Busque por pratos ou ingredientes"} />
+            </Input>
+            <MobileSection>
+              <span onClick={() => logout()}>Sair</span>
+            </MobileSection>
+        </MobileDrawerItens>
+
+
+    </MobileDrawerBody>
+}
+
+function HeaderMobile({ logout, toggle, setToggle }) {
+
+    return (<Header>
+        {toggle ? <MobileDrawer setToggle={setToggle} logout={logout} />
+            : <></>}
+        <IconButton onClick={() => setToggle(!toggle)}>
             <MenuIcon />
         </IconButton>
 
@@ -20,9 +58,11 @@ const HeaderMobile = ({logout}) =>
             <ReceipsMobile receips={"0"} />
         </IconButton>
 
-    </Header>
+    </Header>)
+}
 
-const HeaderDesktop = ({logout}) =>
+
+const HeaderDesktop = ({ logout }) =>
     <Header>
         <Logo size={"24.16px"} />
 
@@ -48,16 +88,21 @@ const HeaderDesktop = ({logout}) =>
 
 
 function Layout({ children, ...props }) {
-    const {signOut} =  useAuth();
+    const { signOut } = useAuth();
 
     const isDesktop = useMediaQuery({
         query: '(min-width: 800px)'
     })
 
+    const [toggleMenu, setToggleMenu] = useState(false)
+
     return (
         <Container>
+
             <HeaderWrapper>
-                {isDesktop ? <HeaderDesktop logout ={signOut} /> : <HeaderMobile logout ={signOut} />}
+                {isDesktop ?
+                    <HeaderDesktop logout={signOut} />
+                    : <HeaderMobile logout={signOut} toggle={toggleMenu} setToggle={setToggleMenu} />}
             </HeaderWrapper>
             <Content>
                 {children}
